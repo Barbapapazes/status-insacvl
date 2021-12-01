@@ -1,7 +1,17 @@
-<ul>
+@layout('layouts/app')
+
+@section('main')
+<h2 class="mt-4 text-2xl">Current status</h2>
+
+<ul class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
   @each(result in results)
   <li>
-    {{result.service.name}} - {{result.statusCode}}
+    @!component('components/statusCard',
+      {
+        name: result.service.name, statusCode: result.statusCode, url: result.service.url,
+      }
+    )
   </li>
   @endeach
 </ul>
+@end
