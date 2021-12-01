@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, belongsTo, BelongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, belongsTo, BelongsTo, column, computed } from '@ioc:Adonis/Lucid/Orm'
 import Service from './Service'
 
 export default class Connection extends BaseModel {
@@ -23,4 +23,9 @@ export default class Connection extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  @computed()
+  public get formattedDate() {
+    return this.createdAt.toFormat('dd/MM/yyyy - HH:mm:ss')
+  }
 }
