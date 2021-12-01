@@ -31,7 +31,7 @@ function getServiceStatus(serviceId: number, url: string) {
       connection.statusCode = statusCode
     } catch (error) {
       connection.statusCode = 0
-      Logger.info(`Request to ${url}`, error)
+      Logger.info(`Request to ${url}: ${error}`)
     }
 
     try {
