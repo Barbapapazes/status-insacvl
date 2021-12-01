@@ -20,6 +20,10 @@ export default class ServiceSeeder extends BaseSeeder {
         name: "INSA'nonym",
         url: 'http://sds5000.insa-cvl.fr:2700/',
       },
+      {
+        name: 'Micro Cloud',
+        url: 'https://microcloud.insa-cvl.fr/',
+      },
     ])
   }
 }
