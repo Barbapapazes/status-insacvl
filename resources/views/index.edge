@@ -8,7 +8,9 @@
   <li>
     @!component('components/statusCard',
       {
-        name: result.service.name, statusCode: result.statusCode, url: result.service.url,
+        name: result.service.name,
+        statusCode: result.statusCode,
+        createdAt: result.formattedDate,
       }
     )
   </li>
