@@ -1,0 +1,17 @@
+<article class="p-6 border rounded flex justify-between ">
+  <a href="{{ url }}" target="_blank" rel="noopener noreferrer">
+    {{ name }}
+  </a>
+  @if(statusCode === 200)
+  <div class="text-green-300">
+  @elseif(statusCode === 0 || statusCode === 500)
+  <div class="text-red-500">
+  @else
+  <div class="text-yellow-500">
+  <div>
+  @end
+    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  </div>
+</article>
