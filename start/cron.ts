@@ -29,14 +29,15 @@ function getServiceStatus(serviceId: number, url: string) {
     try {
       const { statusCode } = await request(url)
       connection.statusCode = statusCode
+    } catch (error) {
+      connection.statusCode = 0
+      Logger.info(`Request to ${url}`, error)
+    }
 
+    try {
       await connection.save()
     } catch (error) {
-      if (error.code === 'UND_ERR_CONNECT_TIMEOUT') {
-        connection.statusCode = 0
-
-        await connection.save()
-      }
+      Logger.error(error)
     }
   }
 }
