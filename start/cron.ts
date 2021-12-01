@@ -7,9 +7,9 @@ import Logger from '@ioc:Adonis/Core/Logger'
 
 const time = Env.get('CRON_TIME') || '*/5 * * * *'
 
-start()
+startCron()
 
-async function start() {
+async function startCron() {
   try {
     const services = await Service.all()
     services.forEach((service) => {
@@ -17,7 +17,7 @@ async function start() {
       cron.schedule(time, getServiceStatus(service.id, service.url))
     })
   } catch (error) {
-    Logger.error(error)
+    Logger.warn(error)
   }
 }
 

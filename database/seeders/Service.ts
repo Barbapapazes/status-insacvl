@@ -3,7 +3,7 @@ import Service from 'App/Models/Service'
 
 export default class ServiceSeeder extends BaseSeeder {
   public async run() {
-    await Service.createMany([
+    await Service.updateOrCreateMany('name', [
       {
         name: 'INSA Centre Val de Loire',
         url: 'https://www.insa-centrevaldeloire.fr/',
