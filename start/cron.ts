@@ -9,10 +9,12 @@ const time = Env.get('CRON_TIME') || '*/5 * * * *'
 start()
 
 async function start() {
-  const services = await Service.all()
-  services.forEach((service) => {
-    cron.schedule(time, getServiceStatus(service.id, service.url))
-  })
+  try {
+    const services = await Service.all()
+    services.forEach((service) => {
+      cron.schedule(time, getServiceStatus(service.id, service.url))
+    })
+  } catch (error) {}
 }
 
 function getServiceStatus(serviceId: number, url: string) {
