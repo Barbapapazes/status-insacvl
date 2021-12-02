@@ -1,0 +1,12 @@
+<ul>
+  <li>
+    <a href="{{ route('ServicesController.index') }}">Services</a>
+  </li>
+  @each(service in services)
+    <li>
+      <a href="{{ route('ServicesController.show', {id: service.id}) }}">
+        {{ service.name }}
+      </a>
+    </li>
+  @endeach
+</ul>

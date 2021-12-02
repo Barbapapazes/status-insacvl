@@ -41,3 +41,17 @@ Route.get('/', async ({ view }) => {
 
   return view.render('index', { results })
 })
+
+Route.group(() => {
+  Route.get('/', async ({ view }) => {
+    const services = await Service.all()
+    return view.render('api/index', { services })
+  })
+
+  Route.get('/services', 'ServicesController.index')
+  Route.get('/services/:id', 'ServicesController.show')
+
+  Route.get('/connections', 'ConnectionsController.index')
+})
+  .prefix('/api')
+  .namespace('App/Controllers/Http/Api')
