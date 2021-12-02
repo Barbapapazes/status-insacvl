@@ -6,7 +6,7 @@ To know when our services are down ! 😵
 
 - [AdonisJS](https://adonisjs.com)
 - [TailwindCSS](https://tailwindcss.com)
-  
+
 ## Installation
 
 ```bash
