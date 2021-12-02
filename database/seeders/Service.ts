@@ -10,19 +10,27 @@ export default class ServiceSeeder extends BaseSeeder {
       },
       {
         name: 'ENT',
-        url: 'https://ent.insa-cvl.fr/',
+        url: 'https://celene.insa-cvl.fr/course/index.php?categoryid=143',
+      },
+      {
+        name: 'CELENE',
+        url: 'https://celene.insa-cvl.fr/',
       },
       {
         name: 'EDT',
-        url: 'https://edt.insa-cvl.fr/',
+        url: 'https://edt.insa-cvl.fr/message.html',
       },
       {
         name: "INSA'nonym",
         url: 'http://sds5000.insa-cvl.fr:2700/',
       },
       {
+        name: 'Authentification Renater',
+        url: 'https://idp-insa-cvl.renater.fr/idp/profile/SAML2/Redirect/SSO?execution=e1s1',
+      },
+      {
         name: 'Micro Cloud',
-        url: 'https://microcloud.insa-cvl.fr/',
+        url: 'https://microcloud.insa-cvl.fr/dashboard/auth/login/?next=/dashboard/',
       },
       {
         name: 'Mail',
