@@ -6,7 +6,7 @@ export default class Connections extends BaseSchema {
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('service_id').notNullable()
+      table.integer('service_id').notNullable()
       table.integer('status_code').notNullable()
 
       /**

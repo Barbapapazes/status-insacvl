@@ -24,7 +24,7 @@ export default class Connection extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
 
-  @computed()
+  @computed({ serializeAs: 'formatted_date' })
   public get formattedDate() {
     return this.createdAt.toFormat('dd/MM/yyyy - HH:mm:ss')
   }
