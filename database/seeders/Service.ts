@@ -24,6 +24,10 @@ export default class ServiceSeeder extends BaseSeeder {
         name: 'Micro Cloud',
         url: 'https://microcloud.insa-cvl.fr/',
       },
+      {
+        name: 'Mail',
+        url: 'https://mail.insa-cvl.fr/',
+      },
     ])
   }
 }
